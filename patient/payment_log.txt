@@ -1,0 +1,96 @@
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 7
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 7
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 2
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 7
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 2
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 2
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 7
+    [apponum] => 1
+)
+
+Received POST data: Array
+(
+    [scheduleid] => 8
+    [apponum] => 1
+)
+
