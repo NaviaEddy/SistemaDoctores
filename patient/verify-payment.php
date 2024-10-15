@@ -17,10 +17,6 @@ if (isset($_SESSION["user"])) {
 }
 
 if ($_POST) {
-    $log_file = 'payment_log.txt'; 
-    $log_data = "Received POST data: " . print_r($_POST, true) . "\n";
-    file_put_contents($log_file, $log_data, FILE_APPEND); 
-
     $sqlmain = "SELECT * FROM patient WHERE pemail=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s", $useremail);
