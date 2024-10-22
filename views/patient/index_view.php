@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/animations.css">
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../public/css/animations.css">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="../../public/css/admin.css">
     <title>Dashboard</title>
     <style>
         .dashbord-tables {
@@ -28,7 +28,7 @@
 <body>
     <div class="container">
 
-        <?php include('../../views/partials/menu.php'); ?>
+        <?php include('../../views/partials/menu_patient.php'); ?>
 
         <div class="dash-body" style="margin-top: 15px; padding: 0;">
             <table border="0" width="100%" style="border-spacing: 0; margin: 0; padding: 0;">
@@ -48,7 +48,7 @@
                         </p>
                     </td>
                     <td width="10%">
-                        <button class="btn-label" style="display: flex;justify-content: center;align-items: center;"><img src="../../img/calendar.svg" width="100%"></button>
+                        <button class="btn-label" style="display: flex;justify-content: center;align-items: center;"><img src="../../public/img/calendar.svg" width="100%"></button>
                     </td>
                 </tr>
                 <tr>
@@ -106,7 +106,7 @@
                                                                 All Doctors
                                                             </div>
                                                         </div>
-                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../img/icons/doctors-hover.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
+                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../public/img/icons/doctors-hover.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
                                                     </div>
                                                 </td>
                                                 <td style="width: 25%;">
@@ -120,7 +120,7 @@
                                                                 All Patients
                                                             </div>
                                                         </div>
-                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../img/icons/patients-hover.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
+                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../public/img/icons/patients-hover.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -136,7 +136,7 @@
                                                                 New Bookings
                                                             </div>
                                                         </div>
-                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../img/icons/book-hover.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
+                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../public/img/icons/book-hover.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
                                                     </div>
                                                 </td>
                                                 <td style="width: 25%;">
@@ -150,7 +150,7 @@
                                                                 Today's Sessions
                                                             </div>
                                                         </div>
-                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../img/icons/session-iceblue.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
+                                                        <div class="btn-icon-back dashboard-icons" style="background-image: url('../../public/img/icons/session-iceblue.svg'); width: 50px; height: 50px; background-size: auto; background-repeat: no-repeat;"></div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -178,7 +178,7 @@
                                                             <td colspan="4">
                                                                 <br>
                                                                 <center>
-                                                                    <img src="../../img/notfound.svg" width="25%">
+                                                                    <img src="../../public/img/notfound.svg" width="25%">
                                                                     <p class="heading-main12" style="font-size: 20px; color: rgb(49, 49, 49);">Nothing to show here!</p>
                                                                     <a class="non-style-link" href="schedule.php">
                                                                         <button class="login-btn btn-primary-soft btn" style="padding: 10px 25px;">&nbsp; Channel a Doctor &nbsp;</button>

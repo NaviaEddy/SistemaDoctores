@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/animations.css">
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../public/css/animations.css">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="../../public/css/admin.css">
+    <script src="../../public/scripts/appointment_patient.js"></script>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;
@@ -22,7 +23,7 @@
 
 <body>
     <div class="container">
-        <?php include('../../views/partials/menu.php'); ?>
+        <?php include('../../views/partials/menu_patient.php'); ?>
         <div class="dash-body">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr>
@@ -47,12 +48,12 @@
                         </p>
                     </td>
                     <td width="10%">
-                        <button class="btn-label" style="display: flex;justify-content: center;align-items: center;"><img src="../../img/calendar.svg" width="100%"></button>
+                        <button class="btn-label" style="display: flex;justify-content: center;align-items: center;"><img src="../../public/img/calendar.svg" width="100%"></button>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;">
-                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">My Bookings (<?php echo $result->num_rows; ?>)</p>
+                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">My Bookings (<?php echo $data['appointmentsCount'] ?>)</p>
                     </td>
                 </tr>
                 <tr>
@@ -92,7 +93,7 @@
                                     <td colspan="7">
                                     <br><br><br><br>
                                     <center>
-                                    <img src="../img/notfound.svg" width="25%">   
+                                    <img src="../../public/img/notfound.svg" width="25%">   
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
                                     <a class="non-style-link" href="appointment.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Appointments &nbsp;</font></button>
@@ -102,16 +103,16 @@
                                     </td>
                                     </tr>';
                                         } else {
-                                            // Itera sobre los resultados en $appointments
                                             foreach ($data['appointments'] as $appointment) {
-                                                $scheduleid = htmlspecialchars($row["scheduleid"]);
-                                                $title = htmlspecialchars($row["title"]);
-                                                $docname = htmlspecialchars($row["docname"]);
-                                                $scheduledate = htmlspecialchars($row["scheduledate"]);
-                                                $scheduletime = htmlspecialchars($row["scheduletime"]);
-                                                $apponum = htmlspecialchars($row["apponum"]);
-                                                $appodate = htmlspecialchars($row["appodate"]);
-                                                $appoid = htmlspecialchars($row["appoid"]);
+                                                $scheduleid = htmlspecialchars($appointment["scheduleid"]);
+                                                $title = htmlspecialchars($appointment["title"]);
+                                                $docname = htmlspecialchars($appointment["docname"]);
+                                                $docid = htmlspecialchars($appointment["docid"]);
+                                                $scheduledate = htmlspecialchars($appointment["scheduledate"]);
+                                                $scheduletime = htmlspecialchars($appointment["scheduletime"]);
+                                                $apponum = htmlspecialchars($appointment["apponum"]);
+                                                $appodate = htmlspecialchars($appointment["appodate"]);
+                                                $appoid = htmlspecialchars($appointment["appoid"]);
 
                                                 echo '<td style="width: 25%;">
                                                 <div class="dashboard-items search-items">
@@ -133,7 +134,7 @@
                                                             Scheduled Date: ' . $scheduledate . '<br>Starts: <b>@' . substr($scheduletime, 0, 5) . '</b> (24h)
                                                         </div>
                                                         <br>
-                                                        <a href="?action=drop&id=' . $appoid . '&title=' . urlencode($title) . '&doc=' . urlencode($docname) . '">
+                                                        <a href="?action=drop&id=' . $appoid . '&docid=' . $docid . '&schid=' . $scheduleid .'&title=' . urlencode($title) . '&doc=' . urlencode($docname) . '">
                                                             <button class="login-btn btn-primary-soft btn" style="padding-top:11px;padding-bottom:11px;width:100%">
                                                                 <font class="tn-in-text">Cancel Booking</font>
                                                             </button>

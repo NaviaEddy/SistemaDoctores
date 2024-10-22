@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/animations.css">  
-    <link rel="stylesheet" href="../css/main.css">  
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../public/css/animations.css">  
+    <link rel="stylesheet" href="../public/css/main.css">  
+    <link rel="stylesheet" href="../public/css/admin.css">
     <title>Dashboard</title>
     <style>
         .dashbord-tables,.doctor-heade{
@@ -56,7 +56,7 @@
                         <table border="0" class="profile-container">
                             <tr>
                                 <td width="30%" style="padding-left:20px" >
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
+                                    <img src="../public/img/user.png" alt="" width="100%" style="border-radius:50%">
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
@@ -124,7 +124,7 @@
                                 </p>
                             </td>
                             <td width="10%">
-                                <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
+                                <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../public/img/calendar.svg" width="100%"></button>
                             </td>
                         </tr>
                 <tr>
@@ -170,7 +170,7 @@
                                                                     All Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                 </div>
                                                         </div>
-                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/doctors-hover.svg');"></div>
+                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../public/img/icons/doctors-hover.svg');"></div>
                                                     </div>
                                                 </td>
                                                 <td style="width: 25%;">
@@ -183,7 +183,7 @@
                                                                     All Patients &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                 </div>
                                                         </div>
-                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/patients-hover.svg');"></div>
+                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../public/img/icons/patients-hover.svg');"></div>
                                                     </div>
                                                 </td>
                                                 </tr>
@@ -198,7 +198,7 @@
                                                                     NewBooking &nbsp;&nbsp;
                                                                 </div>
                                                         </div>
-                                                                <div class="btn-icon-back dashboard-icons" style="margin-left: 0px;background-image: url('../img/icons/book-hover.svg');"></div>
+                                                                <div class="btn-icon-back dashboard-icons" style="margin-left: 0px;background-image: url('../public/img/icons/book-hover.svg');"></div>
                                                     </div>
                                                 </td>
                                                 <td style="width: 25%;">
@@ -211,7 +211,7 @@
                                                                     Today Sessions
                                                                 </div>
                                                         </div>
-                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/session-iceblue.svg');"></div>
+                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../public/img/icons/session-iceblue.svg');"></div>
                                                     </div>
                                                 </td>
                                             </tr>

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="public/css/animations.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/login.css">
     <title>Login</title>
 </head>
 
@@ -48,7 +48,7 @@
                         $database->query($updateQuery);
                         $_SESSION['user'] = $email;
                         $_SESSION['usertype'] = 'p';
-                        header('location: patient/index.php');
+                        header('location: controllers/patient/index_controller.php');
                     } else {
 
                         $error = '<label for="promter" id="error-msg" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Your account is deactivated, please contact technical support.</label>';
@@ -150,31 +150,6 @@
             </table>
         </div>
     </center>
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Si el mensaje de error existe
-            var errorMsg = document.getElementById('error-msg');
-
-            if (errorMsg) {
-                // Almacenar el error en sessionStorage
-                sessionStorage.setItem('hasError', 'true');
-
-                // Ocultar el mensaje después de 5 segundos
-                setTimeout(function() {
-                    errorMsg.style.display = 'none';
-                    sessionStorage.removeItem('hasError'); // Eliminar después de ocultarlo
-                }, 5000);
-            }
-
-            // Si se recarga la página y no hay error en sessionStorage, eliminar el mensaje inmediatamente
-            if (!sessionStorage.getItem('hasError')) {
-                if (errorMsg) {
-                    errorMsg.style.display = 'none';
-                }
-            }
-        });
-    </script> -->
 </body>
 
 </html>

@@ -135,19 +135,14 @@
                                         <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php  echo $insertkey ?>">&nbsp;&nbsp;
                                         <?php
                                             echo '<datalist id="doctors">';
-                                            $list11 = $database->query("select DISTINCT * from  doctor;");
-                                            $list12 = $database->query("select DISTINCT * from  schedule GROUP BY title;");
+                                            $list11 = $database->query("select * from  doctor;");
 
                                             for ($y=0;$y<$list11->num_rows;$y++){
                                                 $row00=$list11->fetch_assoc();
                                                 $d=$row00["docname"];     
                                                 echo "<option value='$d'><br/>";    
                                             };
-                                            for ($y=0;$y<$list12->num_rows;$y++){
-                                                $row00=$list12->fetch_assoc();
-                                                $d=$row00["title"];   
-                                                echo "<option value='$d'><br/>";
-                                            };
+                                            
                                             echo ' </datalist>';
                                         ?>
                                         <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
@@ -231,25 +226,6 @@
                                             </td>';
                                     }
                                     echo "</tr>";
-                                    // echo '<tr>
-                                    //     <td> &nbsp;'.
-                                    //     substr($title,0,30)
-                                    //     .'</td>
-                                    //     <td style="text-align:center;">
-                                    //         '.substr($scheduledate,0,10).' '.substr($scheduletime,0,5).'
-                                    //     </td>
-                                    //     <td style="text-align:center;">
-                                    //         '.$nop.'
-                                    //     </td>
-                                    //     <td>
-                                    //     <div style="display:flex;justify-content: center;">
-                                        
-                                    //     <a href="?action=view&id='.$scheduleid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
-                                    //    &nbsp;&nbsp;&nbsp;
-                                    //    <a href="?action=drop&id='.$scheduleid.'&name='.$title.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Cancel Session</font></button></a>
-                                    //     </div>
-                                    //     </td>
-                                    // </tr>';   
                                 }
                             }      
                             ?>

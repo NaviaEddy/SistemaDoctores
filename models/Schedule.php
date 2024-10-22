@@ -31,13 +31,45 @@ class ScheduleModel
         return $stmt->get_result()->num_rows;
     }
 
-    public function getFutureAppointments($today) {
-        $query = "SELECT * FROM appointment WHERE appodate >= ?";
+    public function getScheduleSessionsToday($today){
+        $query = "SELECT * 
+              FROM schedule 
+              INNER JOIN doctor ON schedule.docid = doctor.docid 
+              WHERE schedule.scheduledate >= ? 
+              ORDER BY schedule.scheduledate ASC";
         $stmt = $this->database->prepare($query);
-        $stmt->bind_param('s', $today); 
+        $stmt->bind_param('s', $today);
         $stmt->execute();
-        return $stmt->get_result()->num_rows;
+        return $stmt->get_result();
     }
+
+    public function getScheduleSessionsId($id){
+        $query = "SELECT * 
+              FROM schedule 
+              INNER JOIN doctor ON schedule.docid = doctor.docid 
+              WHERE schedule.scheduleid = ? 
+              ORDER BY schedule.scheduledate DESC";
+        $stmt = $this->database->prepare($query);
+        $stmt->bind_param('s', $id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getUpcomingSessions($today, $nextweek) {
+        $stmt = $this->database->prepare(
+            "SELECT schedule.scheduleid, schedule.title, doctor.docname, schedule.scheduledate, 
+                    schedule.scheduletime, schedule.nop 
+             FROM schedule 
+             INNER JOIN doctor ON schedule.docid = doctor.docid 
+             WHERE schedule.scheduledate >= ? AND schedule.scheduledate <= ?
+             ORDER BY schedule.scheduledate DESC"
+        );
+        $stmt->bind_param("ss", $today, $nextweek);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+
 }
 
 ?>
