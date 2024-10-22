@@ -1,1 +1,0 @@
-{"version":1,"defects":{"AppointmentModelTest::testGetFutureAppointments":8,"AppointmentModelTest::testGetNumberAppointment":8},"times":{"AppointmentModelTest::testGetFutureAppointments":0.01,"AppointmentModelTest::testGetNumberAppointment":0.001}}
