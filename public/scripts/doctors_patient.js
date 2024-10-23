@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const docspeciality = urlParams.get('spe');
             const docphone = urlParams.get('tel');
             showPopupView(docname, docemail, docspeciality, docphone);
-        } else if (action === 'session') {
-            const docname = urlParams.get('name');
-            showPopupSessions(docname);
-        }
+        } else if (action === 'reviews') {
+            const id = urlParams.get('id');
+            showPopupReview(id);
+        } 
     }
 
 });
@@ -87,6 +87,48 @@ function showPopupView(docname, docemail, docspeciality, docphone) {
         </div>`;
     document.body.insertAdjacentHTML('beforeend', popupHtml);
 }
+
+function showPopupReview(id) {
+    fetch(`http://localhost/Online-Doctor-Appointment-System/patient/review.php?id=${id}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            //console.log(data);
+            let reviewsHtml;
+            if (data.length > 0) {
+                reviewsHtml = data.map((review, index) => `
+                    <div class="review-pop">
+                        <h2>Review ${index + 1}:</h2>
+                        <div class="review-score-pop">${'⭐'.repeat(review.score)}</div>
+                        <blockquote>"${review.description}"</blockquote>
+                        <p><strong>Reviewed by:</strong> ${review.pname}</p>
+                    </div>
+                `).join('');
+            } else {
+
+                reviewsHtml = `<div class="review-pop"><h2>No patient reviews found</h2></div>`;
+            }
+            
+            const popupHtml = `
+                <div class="popup-pop">
+                    <div class="popup-content">
+                        ${reviewsHtml}
+                        <a href="../../controllers/patient/doctors_controller.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn"></a>
+                    </div>
+                </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', popupHtml);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+}
+
 
 function showPopupSessions(docname) {
     const popupHtml = `

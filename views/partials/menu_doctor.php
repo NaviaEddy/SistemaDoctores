@@ -51,9 +51,17 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-patient">
-                <a href="../../controllers/doctor/appointment_controller.php" class="non-style-link-menu">
+                <a href="../../controllers/doctor/patient_controller.php" class="non-style-link-menu">
                     <div>
                         <p class="menu-text">My Patients</p>
+                </a>
+            </td>
+        </tr>
+        <tr class="menu-row">
+            <td class="menu-btn menu-icon-calendar">
+                <a href="../../controllers/doctor/calendar_controller.php" class="non-style-link-menu">
+                    <div>
+                        <p class="menu-text">My Calendar</p>
                 </a>
             </td>
         </tr>

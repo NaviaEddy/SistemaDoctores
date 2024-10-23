@@ -91,7 +91,7 @@
                     </td>
                 </tr>            
             </table>
-        </div>
+    </div>
         <?php       
                     $selecttype="My";
                     $current="My patients Only";

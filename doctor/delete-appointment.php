@@ -18,5 +18,5 @@ session_start();
         $sql= $database->query("delete from appointment where appoid='$id';");
         //$sql= $database->query("delete from doctor where docemail='$email';");
         //print_r($email);
-        header("location: appointment.php");
+        header("location: ../controllers/doctor/appointment_controller.php");
     }

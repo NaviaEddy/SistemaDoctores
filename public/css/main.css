@@ -388,6 +388,10 @@ input[type=search]:focus {
   background-image: url('../img/icons/home.svg');
 }
 
+.menu-icon-calendar{
+  background-image: url('../img/icons/calendar.svg');
+}
+
 
 
 .menu-icon-dashbord:hover,.menu-icon-dashbord-active{
@@ -395,6 +399,13 @@ input[type=search]:focus {
 
   background-image: url('../img/icons/dashboard-hover.svg');
 }
+
+.menu-icon-review:hover,.menu-icon-review-active{
+  color: var(--primarycolor);
+
+  background-image: url('../img/icons/review.svg');
+}
+
 
 
 .menu-icon-doctor:hover,.menu-icon-doctor-active{

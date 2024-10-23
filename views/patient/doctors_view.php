@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../public/css/animations.css">
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="../../public/css/admin.css">
+    <link rel="stylesheet" href="../../public/css/popup.css">
     <script src="../../public/scripts/doctors_patient.js"></script>
     <title>Dashboard</title>
     <style>
@@ -141,7 +142,7 @@
                                         <div style="display:flex;justify-content: center; gap: 10px;">
                                             <a href="?action=view&name=' . $name . '&email=' . $email . '&spe=' . $spe . '&tel=' . $doctel . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
                                        
-                                            <a href="?action=session&id=' . $docid . '&name=' . $name . '"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Sessions</font></button></a>
+                                            <a href="?action=reviews&id=' . $docid . '"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-review-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Reviews</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';

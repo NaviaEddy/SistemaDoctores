@@ -69,7 +69,34 @@ class ScheduleModel
         return $stmt->get_result();
     }
 
+    public function getAppointmentsDoctorCount($doctorId) {
+        $sql = "SELECT * FROM schedule 
+                INNER JOIN appointment ON schedule.scheduleid=appointment.scheduleid 
+                WHERE schedule.docid=?";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bind_param('s', $doctorId);
+        $stmt->execute();
+        return $stmt->get_result()->num_rows;
+    }
 
+    public function getSchedulesSessionsDoctorCount($doctorId) {
+        $sql = "SELECT  * FROM schedule where docid=?;";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bind_param('s', $doctorId);
+        $stmt->execute();
+        return $stmt->get_result()->num_rows;
+    }
+
+    public function getSchedulesSessionsDoctor($docid){
+        $query = "SELECT * 
+              FROM schedule 
+              INNER JOIN doctor ON schedule.docid = doctor.docid 
+              WHERE schedule.docid= ?";
+        $stmt = $this->database->prepare($query);
+        $stmt->bind_param('s', $docid);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
 }
 
 ?>
