@@ -33,7 +33,7 @@
         <div class="dash-body" style="margin-top: 15px; padding: 0;">
             <table border="0" width="100%" style="border-spacing: 0; margin: 0; padding: 0;">
                 <tr>
-                    <td colspan="1" class="nav-bar" style="padding-left: 20px;">
+                    <td colspan="1" class="nav-bar" style="padding-left: 30px;">
                         <p style="font-size: 23px; font-weight: 600;">Home</p>
                     </td>
                     <td width="50%"></td>
@@ -64,18 +64,6 @@
                                             <a href="schedule.php" class="non-style-link"><b>"Sessions"</b> </a><br>
                                             Track your past and future appointments history.<br>Also find out the expected arrival time of your doctor or medical consultant.<br><br>
                                         </p>
-                                        <h3>Channel a Doctor Here</h3>
-                                        <form action="schedule.php" method="post" style="display: flex; align-items: center; gap: 10px;">
-                                            <input type="search" name="search" class="input-text " placeholder="Search Doctor and We will Find The Session Available" list="doctors" style="width:45%;">
-                                            <?php
-                                            echo '<datalist id="doctors">';
-                                            foreach ($data['doctors'] as $doctor) {
-                                                echo "<option value='{$doctor['docname']}'></option>";
-                                            }
-                                            echo '</datalist>';
-                                            ?>
-                                            <input type="submit" value="Search" class="login-btn btn-primary btn" style="padding: 10px 25px;">
-                                        </form>
                                     </td>
                                 </tr>
                             </table>
@@ -180,9 +168,6 @@
                                                                 <center>
                                                                     <img src="../../public/img/notfound.svg" width="25%">
                                                                     <p class="heading-main12" style="font-size: 20px; color: rgb(49, 49, 49);">Nothing to show here!</p>
-                                                                    <a class="non-style-link" href="schedule.php">
-                                                                        <button class="login-btn btn-primary-soft btn" style="padding: 10px 25px;">&nbsp; Channel a Doctor &nbsp;</button>
-                                                                    </a>
                                                                 </center>
                                                                 <br>
                                                             </td>

@@ -15,6 +15,12 @@ class DoctorModel
         return $this->database->query($sql);
     }
 
+    public function getDoctorCount()
+    {
+        $sql = "SELECT * FROM doctor";
+        return $this->database->query($sql)->num_rows;
+    }
+
     public function getDoctorByEmail($email) {
         $stmt = $this->database->prepare("SELECT * FROM doctor WHERE docemail = ?");
         $stmt->bind_param("s", $email);
