@@ -66,7 +66,7 @@
                                         <p>Thanks for joining with us. We are always trying to get you a complete service.<br>
                                             You can view your daily schedule, Reach Patients Appointment at home!<br><br>
                                         </p>
-                                        <a href="appointment.php" class="non-style-link">
+                                        <a href="../../controllers/doctor/appointment_controller.php" class="non-style-link">
                                             <button class="btn-primary btn" style="width:30%">View My Appointments</button>
                                         </a>
                                         <br><br>

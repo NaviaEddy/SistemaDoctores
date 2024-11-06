@@ -43,7 +43,7 @@ if ($_POST) {
             if ($admin) {
                 $_SESSION['user'] = $email;
                 $_SESSION['usertype'] = 'a';
-                header('location: ../admin/index_controller.php');
+                header('location: ../../admin/index.php');
             } else {
                 $error = "Wrong credentials: Invalid email or password.";
             }

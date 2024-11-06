@@ -43,7 +43,7 @@
                         <table border="0" class="profile-container">
                             <tr>
                                 <td width="30%" style="padding-left:20px" >
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
+                                    <img src="../public/img/user.png" alt="" width="100%" style="border-radius:50%">
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrator</p>
@@ -123,7 +123,7 @@
                         </p>
                     </td>
                     <td width="10%">
-                        <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
+                        <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../public/img/calendar.svg" width="100%"></button>
                     </td>
                 </tr>
                 <tr >

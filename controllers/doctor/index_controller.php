@@ -21,7 +21,6 @@ $appointmentModel = new AppointmentModel($database);
 $patientModel = new PatientModel($database);
 
 $doctor = $doctorModel->getDoctorByEmail($userEmail);
-date_default_timezone_set('Asia/Kolkata');
 $today = date('Y-m-d');
 $nextweek = date('Y-m-d', strtotime("+1 week"));
 $data = [

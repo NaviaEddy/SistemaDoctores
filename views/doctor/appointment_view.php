@@ -21,7 +21,7 @@
             <table border="0" width="100%" style="margin-top:25px;">
                 <tr>
                     <td width="13%">
-                        <a href="appointment.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Back</font></button></a>
+                        <a href="../../controllers/doctor/index_controller.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Back</font></button></a>
                     </td>
                     <td>
                         <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Appointment Manager</p>                      
@@ -44,29 +44,6 @@
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;">
                         <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">My Appointments (<?php echo $data['appointmentCount']; ?>)</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4" style="padding-top:0px;width: 100%;" >
-                        <center>
-                        <table class="filter-container" border="0" >
-                        <tr>
-                           <td width="10%">
-                           </td> 
-                        <td width="5%" style="text-align: center;">
-                            Date:
-                        </td>
-                        <td width="30%">
-                        <form action="" method="post">
-                            <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
-                        </td>
-                    <td width="12%">
-                        <input type="submit"  name="filter" value=" Filter" class=" btn-primary-soft btn button-icon btn-filter"  style="padding: 15px; margin :0;width:100%">
-                        </form>
-                    </td>
-                    </tr>
-                            </table>
-                        </center>
                     </td>
                 </tr>
                 <tr>
@@ -105,7 +82,7 @@
                                     <img src="../../public/img/notfound.svg" width="25%">
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="appointment.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Appointments &nbsp;</font></button>
+                                
                                     </a>
                                     </center>
                                     <br><br><br><br>

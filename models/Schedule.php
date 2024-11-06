@@ -70,9 +70,9 @@ class ScheduleModel
     }
 
     public function getAppointmentsDoctorCount($doctorId) {
-        $sql = "SELECT * FROM schedule 
-                INNER JOIN appointment ON schedule.scheduleid=appointment.scheduleid 
-                WHERE schedule.docid=?";
+        $sql = "SELECT * FROM schedule
+                INNER JOIN appointment ON schedule.scheduleid = appointment.scheduleid
+                WHERE schedule.docid = ? AND appointment.appodate = CURDATE()";
         $stmt = $this->database->prepare($sql);
         $stmt->bind_param('s', $doctorId);
         $stmt->execute();
