@@ -54,7 +54,7 @@ El sistema está compuesto por tres roles principales:
 3. **Configurar la Base de Datos**:
    - Abre **PHPMyAdmin** en tu navegador (http://localhost/phpmyadmin).
    - Crea una base de datos llamada **edoc**.
-   - Importa el archivo **edoc.sql** que se encuentra en la raíz del código fuente.
+   - Importa el archivo **SQL_DB_EDOC.sql** que se encuentra en la raíz del código fuente.
 
 ---
 
