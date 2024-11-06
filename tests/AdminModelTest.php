@@ -6,12 +6,73 @@ class AdminModelTest extends TestCase
     private $databaseMock;
     private $adminModel;
     private $statementMock;
+    private $mockStmt;
 
     protected function setUp(): void
     {
         $this->databaseMock = $this->createMock(mysqli::class);
         $this->statementMock = $this->createMock(mysqli_result::class);
+        $this->mockStmt = $this->createMock(mysqli_stmt::class);
         $this->adminModel = new AdminModel($this->databaseMock);
+    }
+
+    public function testGetAdminByEmailReturnsCorrectData()
+    {
+        $email = 'admin@example.com';
+        $expectedData = ['aemail' => 'admin@example.com', 'aname' => 'Admin Test'];
+
+        $this->databaseMock->method('prepare')->willReturn($this->mockStmt);
+
+        $this->mockStmt
+            ->expects($this->once())
+            ->method('bind_param')
+            ->with('s', $email);
+
+        $this->mockStmt
+            ->expects($this->once())
+            ->method('execute')
+            ->willReturn(true);
+
+        $this->mockStmt
+            ->method('get_result')
+            ->willReturn($this->statementMock);
+
+        $this->statementMock
+            ->method('fetch_assoc')
+            ->willReturn($expectedData);
+
+        $result = $this->adminModel->getAdminByEmail($email);
+
+        $this->assertSame($expectedData, $result);
+    }
+
+    public function testGetAdminByEmailReturnsNullWhenNoData()
+    {
+        $email = 'nonexistent@example.com';
+
+        $this->databaseMock->method('prepare')->willReturn($this->mockStmt);
+
+        $this->mockStmt
+            ->expects($this->once())
+            ->method('bind_param')
+            ->with('s', $email);
+
+        $this->mockStmt
+            ->expects($this->once())
+            ->method('execute')
+            ->willReturn(true);
+
+        $this->mockStmt
+            ->method('get_result')
+            ->willReturn($this->statementMock);
+
+        $this->statementMock
+            ->method('fetch_assoc')
+            ->willReturn(null);
+
+        $result = $this->adminModel->getAdminByEmail($email);
+
+        $this->assertNull($result);
     }
 
     public function testValidateCredentialsReturnsCorrectData()
