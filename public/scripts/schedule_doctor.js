@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="heading-main12" style="font-size:20px;color:rgb(49, 49, 49)">
                                 We couldn't find anything related to your keywords!
                             </p>
-                            <a class="non-style-link" href="appointment.php">
+                            <a class="non-style-link" href="../../controllers/doctor/appointment_controller.php">
                                 <button class="login-btn btn-primary-soft btn" style="margin-left:20px;">
                                     &nbsp; Show all Appointments &nbsp;
                                 </button>
