@@ -130,15 +130,19 @@ Se han implementado pruebas unitarias utilizando **PHPUnit** para asegurar la fi
 - Verificación de las interacciones con la base de datos.
 - Funcionalidad de los módulos principales (como la creación de citas y la gestión de cuentas).
 
----
+Para ejecutar las pruebas, existen dos opciones:
 
-## 8. Flujo de Trabajo
+1. **Ejecutando el archivo `app.php`:** Al ejecutar este archivo, se corren todas las pruebas. Si todas pasan correctamente, el sistema se abrirá automáticamente.
 
-El flujo de trabajo de desarrollo para este proyecto se basó en el modelo **Git Flow**. Esto permitió una gestión eficiente de las ramas y el control de versiones mientras se implementaban nuevas funcionalidades y correcciones. A continuación se describe el flujo de trabajo seguido:
+2. **Ejecutando comandos individuales:** Puedes utilizar los siguientes scripts para gestionar y ejecutar las pruebas:
 
----
+   - `composer install`: Instala todas las dependencias necesarias.
+   - `composer dumpautoload -o`: Optimiza el autoloading de Composer para mejorar el rendimiento en la carga de clases.
+   - `php -d extension=mysqli vendor/bin/phpunit --testdox tests`: Ejecuta las pruebas con PHPUnit, generando un informe en formato "testdox" que describe cada prueba ejecutada.
 
-### 9. Ramas de Características (Feature Branches)
+Estas opciones permiten realizar pruebas exhaustivas de los componentes del sistema, verificando su correcto funcionamiento antes de ser desplegados.
+
+### 8. Ramas de Características (Feature Branches)
 
 Las nuevas funcionalidades o mejoras se desarrollaron en ramas específicas para cada tarea o módulo. Estas ramas se creaban a partir de la rama `develop` y tenían el siguiente formato:
 
@@ -149,7 +153,7 @@ Las nuevas funcionalidades o mejoras se desarrollaron en ramas específicas para
 - **`fix/nombre`**: Para correcciones de errores.
 - **`test/nombre`**: Para agregar o modificar pruebas.
 
-### 9.1 Convenciones de Commit
+### 8.1 Convenciones de Commit
 
 Los mensajes de commit siguieron la convención **Conventional Commits**, que facilita la claridad y organización del historial de cambios. Los tipos de cambios más comunes fueron:
 
